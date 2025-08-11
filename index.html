@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio Website-Ian</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbarScroll">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ian</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Updated hero section with simplified content -->
+    <section class="bgimage" id="home">
+        <div class="particles"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content">
+                        <h2 class="hero_title">
+                            <span id="typed-text"></span>
+                            <span class="cursor"></span>
+                        </h2>
+                        
+                        <div class="hero-social-icons">
+                            <a href="https://x.com/ian0xLift" class="hero-social-link" target="_blank">X</a>
+                            <a href="https://github.com/taquito22" class="hero-social-link" target="_blank">GitHub</a>
+                            <a href="https://www.linkedin.com/in/ian-sequeira-4648b9300" class="hero-social-link" target="_blank">LinkedIn</a>
+                            <a href="https://open.spotify.com/user/ian0x" class="hero-social-link" target="_blank">Spotify</a>
+                            <a href="https://alidainc.com" class="hero-social-link">Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Updated About Me section with new formatting -->
+    <section id="about">
+        <div class="container mt-2 pt-2">
+            <h1 class="text-center">About Me</h1>
+            <div class="about-header mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 text-center">
+                        <div class="profile-image-container">
+                            <img src="images/about.JPG" class="imageAboutPage rounded-circle shadow" alt="Profile picture">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-text text-center">
+                        <div class="title-and-resume">
+                            <h3 class="about-title">Data & ML Specialist</h3>
+                            <a href="files/Ian_Sequeira_Resume.pdf" class="resume-link" target="_blank">Resume</a>
+                        </div>
+                        
+                        <p class="about-description">19 year old Econ & Stats/Data Science student at UC Santa Barbara. Contemporary piano player and DJ, creating music for the soul. Probably too deep into agentic LLM data transformations. Psychology and philosophy are pretty cool. Commonly found at the gym or meal prepping. Big fan of optimization, systems, and the quirks of human thought.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Updated Life Snapshots sect. with 5 images + descriptions -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Life Snapshots</h3>
+                    <div class="photo-gallery">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="gallery-item">
+                                    <img src="images/photo1.jpg" class="img-fluid rounded" alt="Personal photo">
+                                    <div class="photo-caption">
+                                        <h5>Playa Tamarindo</h5>
+                                        <p>Out surfing with the family in Costa Rica</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="gallery-item">
+                                    <img src="images/photo2.jpg" class="img-fluid rounded" alt="Personal photo">
+                                    <div class="photo-caption">
+                                        <h5>Rainbow Bridge Hike</h5>
+                                        <p>Hiking with friends to a popular spot in South Lake Tahoe</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="gallery-item">
+                                    <img src="images/photo3.jpg" class="img-fluid rounded" alt="Personal photo">
+                                    <div class="photo-caption">
+                                        <h5>Volleyball</h5>
+                                        <p>Playing nationally for my high school volleyball club</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="gallery-item">
+                                    <img src="images/photo4.jpg" class="img-fluid rounded" alt="Personal photo">
+                                    <div class="photo-caption">
+                                        <h5>Lunch at Lincoln Plaza</h5>
+                                        <p>Having lunch with my abuelita and family at Lincoln plaza in Costa Rica</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="gallery-item">
+                                    <img src="images/photo5.jpg" class="img-fluid rounded" alt="Personal photo">
+                                    <div class="photo-caption">
+                                        <h5>Summer Camp</h5>
+                                        <p>Volunteering at church summer camps with my favorite elementary schoolers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simplified Projects section -->
+    <section id="portfolio">
+        <div class="container mt-3 mb-5">
+            <h1 class="text-center">Projects</h1>
+            
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Azure Data Pipeline">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Azure Data Pipeline Project</h4>
+                            <p class="card-text">A comprehensive data pipeline built on Azure, incorporating storage solutions, data transformations, and cleaning processes using Databricks. This project demonstrates end-to-end ETL workflow implementation for Olympic data analysis.</p>
+                            <div class="project-links mt-auto">
+                                <a href="https://github.com/taquito22/tokyo-olympic-azure-data-project" class="btn-project w-100" target="_blank">
+                                    View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage2.jpg" alt="Market Gap Project">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Preclinical Alzheimer's ML Modeling</h4>
+                            <p class="card-text">An ongoing project that utilizes A4 Study cognitive data to predict dementia conversion using GLMs, ridge regression, and CARTs. This research identifies key cognitive predictors to generate actionable insights for early intervention in at-risk older adults.</p>
+                            <div class="project-links mt-auto">
+                                <a href="#" class="btn-project w-100" target="_blank">
+                                    In Development
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage3.jpg" alt="Trading Algorithm">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Trading Algorithm Project</h4>
+                            <p class="card-text">A collection of custom trading algorithms written in Pine Script with success rates exceeding 60%. These algorithms utilize various technical indicators and pattern recognition to automate trading decisions.</p>
+                            <div class="project-links mt-auto">
+                                <a href="https://github.com/taquito22/Trading-Algorithms" class="btn-project w-100" target="_blank">
+                                    View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage4.jpg" alt="C++ Projects">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">C++: Password Security + Poker game</h4>
+                            <p class="card-text">A collection of advanced C++ projects showcasing algorithm implementation and object-oriented design. Includes a comprehensive poker game with hand evaluation algorithms and cipher implementations featuring encryption/decryption techniques with optimized data structures.</p>
+                            <div class="project-links mt-auto">
+                                <a href="https://github.com/taquito22" class="btn-project w-100" target="_blank">
+                                    View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage5.jpg" alt="SQL Development">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">SQL Telescope Database</h4>
+                            <p class="card-text">A personal project using Telescope-SQL scripts to enable authorized users to access and manage telescope data with authentication, structured tables, and views. The repository includes setup scripts and supports filtering and querying telescope data through database views.</p>
+                            <div class="project-links mt-auto">
+                                <a href="https://github.com/taquito22/Telescope-SQL" class="btn-project w-100" target="_blank">
+                                    View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4">
+                    <div class="project-card h-100">
+                        <div class="card-img-wrapper">
+                            <img class="card-img-top" src="images/portfolioImage6.jpg" alt="Financial AI Assistant">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Fine-Tuned Financial & Medical AI Assistants</h4>
+                            <p class="card-text">An upcoming project (starting September 2025) focused on developing two separate fine-tuned Large Language Models for financial and medical advice. Each will provide accurate financial advice on topics including taxes, social security, diet adjustments, disease prevention, and more.</p>
+                            <div class="project-links mt-auto">
+                                <a href="#" class="btn-project w-100" target="_blank">
+                                    Coming Soon
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Contact section w/no phone # -->
+    <section id="contact">
+        <div class="container mt-3 contactContent">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <div class="contact-text">
+                            <h3>Let's Connect</h3>
+                            <p>I'm always open to discussing new opportunities, collaborations, or just having a conversation about data science, tech, philosophy, or any interesting projects you might have in mind.</p>
+                        </div>
+                        
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <strong>Email:</strong>
+                                <a href="mailto:ian_sequeira@ucsb.edu">ian_sequeira@ucsb.edu</a>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <strong>Location:</strong>
+                                <span>Sacramento, CA, USA</span>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <strong>University:</strong>
+                                <span>UC Santa Barbara</span>
+                            </div>
+                            
+                            <div class="contact-detail-item">
+                                <strong>Status:</strong>
+                                <span>Available for internships & research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/xdkenzye" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                            </div>
+                            
+                            <!-- Anti-spam honeypot field -->
+                            <div style="display: none;">
+                                <label>Don't fill this out if you're human: <input name="_gotcha"></label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success w-100">Send Message</button>
+                            
+                            <!-- Success/Error messages -->
+                            <div id="form-status" class="mt-3" style="display: none;">
+                                <div id="success-message" class="alert alert-success" style="display: none;">
+                                    Thank you! Your message has been sent successfully.
+                                </div>
+                                <div id="error-message" class="alert alert-danger" style="display: none;">
+                                    Oops! There was a problem sending your message. Please try again.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Folsom,+CA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- footer section-->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Ian Sequeira</h3>
+                        <p>Cogito, ergo sum, semper evolvens</p>
+                        <div class="footer-links">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#portfolio">Portfolio</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <p class="copyright">&copy; 2025 Ian Sequeira. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- load javascript after loading all html content -->
+    <script src="script.js"></script>
+
+</body>
+</html>
