@@ -338,13 +338,6 @@
     transition: transform 0.3s ease;
 }
 
-/* Turing logo specific styling - contain instead of cover */
-.card-img-top[src*="turingLogo"] {
-    object-fit: contain;
-    background-color: #000;
-    padding: 20px;
-}
-
 .project-card:hover .card-img-top {
     transform: scale(1.05);
 }
