@@ -7,7 +7,7 @@ My personal portfolio website showcasing my expertise in economics, data science
 * HTML5, CSS3, and JavaScript (ES6+)
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for responsive layout
 * [Font Awesome 5](https://fontawesome.com/) for icons
-* [OpenStreet](https://www.openstreetmap.org)for location embedding
+* [OpenStreet](https://www.openstreetmap.org) for location embedding
 * [Formspree](https://formspree.io/) for contact form processing
 
 ## Features
