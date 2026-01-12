@@ -235,7 +235,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Fintel - Financial Intelligence CLI</h4>
-                            <p class="card-text">I built this as my personal stock research dashboard. It shows market sentiment at a glance, surfaces stock picks across short, medium, and long term timeframes with conviction scores, and keeps me aware of key economic headwinds like dollar strength or recession indicators that could impact different sectors. The goal was to have one place to check before making any investment decisions.</p>
+                            <p class="card-text">I built this as my personal stock research dashboard. It aggregates data from multiple financial APIs to calculate market sentiment, then runs a scoring algorithm to surface stock picks across short, medium, and long term timeframes with conviction ratings. The headwinds section tracks macro indicators like the Sahm Rule and dollar index, mapping their impact to specific sectors. Built in Python with async data pipelines so everything stays snappy even when pulling from a dozen sources at once.</p>
                             <div class="project-links mt-auto">
                                 <a href="https://github.com/ian-sequ7/fintel" class="btn-project w-100" target="_blank">
                                     View Repository
@@ -268,7 +268,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Research Advisor Finder</h4>
-                            <p class="card-text">Finding a PhD advisor is tough, so I made this tool to help. You describe your research interests in plain English, set a minimum h index if you want, and it searches through thousands of professors to find the best matches. Each result shows their top papers, citation stats, and you can get an AI generated explanation of why they might be a good fit for your research goals.</p>
+                            <p class="card-text">Finding a PhD advisor is tough, so I made this tool to help. It uses OpenAI embeddings to convert your research interests into vectors, then runs similarity search against a PostgreSQL database with pgvector to find professors whose published work aligns with what you want to study. The backend is FastAPI serving a Next.js frontend, and I integrated the Claude API to generate personalized explanations of why each professor might be a good match based on their actual papers.</p>
                             <div class="project-links mt-auto">
                                 <a href="https://github.com/ian-sequ7/research-advisor-finder" class="btn-project w-100" target="_blank">
                                     View Repository
