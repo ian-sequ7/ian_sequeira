@@ -173,7 +173,19 @@
       </div>
 
       <div class="project-description">
-        <p>I built this as my personal stock research dashboard. It aggregates data from multiple financial APIs to calculate market sentiment, then runs a scoring algorithm to surface stock picks across short, medium, and long term timeframes with conviction ratings. The headwinds section tracks macro indicators like the Sahm Rule and dollar index, mapping their impact to specific sectors. Built in Python with async data pipelines so everything stays snappy even when pulling from a dozen sources at once.</p>
+        <p>I built this as my personal financial intelligence dashboard—bringing institutional-grade stock analysis to a command-line interface. It combines multi-factor quantitative scoring, smart money tracking, and comprehensive macro risk analysis to surface high-conviction investment ideas.</p>
+
+        <p><strong>Stock Scoring Engine:</strong> I implemented a 6-factor scoring algorithm grounded in academic research. It weighs Momentum (25%, Jegadeesh-Titman), Quality (25%, Novy-Marx profitability), Valuation (20%), Growth (15%), Analyst consensus (10%), and Smart Money flows (5%). Each stock gets scored across these dimensions, then ranked to surface the most compelling opportunities.</p>
+
+        <p><strong>Smart Money Tracking:</strong> I track what the sophisticated players are doing—hedge fund 13F filings, insider Form 4 transactions, and Congressional trades. When insiders are buying their own stock or activist funds are taking positions, that signal gets factored into the scoring model.</p>
+
+        <p><strong>Macro Risk Analysis:</strong> The headwinds section monitors 22+ economic indicators across 8 categories: credit spreads, housing data, recession probability (Sahm Rule), financial stress indices, inflation metrics, labor market health, market valuations, and global currency dynamics. Each indicator is mapped to specific sector impacts so I can see exactly where macro pressure points are building.</p>
+
+        <p><strong>Daily Market Briefing:</strong> Every morning I get a market briefing with the economic calendar and historical reaction patterns—so I know how equities typically move when CPI or Fed decisions drop.</p>
+
+        <p><strong>Portfolio Analytics:</strong> Built-in paper trading with P&L tracking, Sharpe ratio calculations, sector allocation monitoring, and tax-loss harvesting opportunities. It's connected to TradingView charts for technical analysis when I need to drill into price action.</p>
+
+        <p><strong>Tech Stack:</strong> Python 3.11+ backend with async httpx for parallel API calls, SQLite for local data persistence. Frontend is Astro 5 + React 19 + TailwindCSS 4, keeping the UI fast and minimal. Everything stays snappy even when pulling from a dozen data sources simultaneously.</p>
       </div>
 
       <div class="project-actions">

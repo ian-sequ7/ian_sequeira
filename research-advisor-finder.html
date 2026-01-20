@@ -218,7 +218,25 @@
       <!-- Project Description -->
       <div class="project-description">
         <h2>About This Project</h2>
-        <p>Finding a PhD advisor is tough, so I made this tool to help. It uses OpenAI embeddings to convert your research interests into vectors, then runs similarity search against a PostgreSQL database with pgvector to find professors whose published work aligns with what you want to study. The backend is FastAPI serving a Next.js frontend, and I integrated the Claude API to generate personalized explanations of why each professor might be a good match based on their actual papers.</p>
+        <p>Finding a PhD advisor is tough, so I built this AI-powered tool to help applicants discover faculty whose research truly aligns with theirs. It's <strong>live and deployed</strong> with the frontend on Vercel and backend on Railway, currently indexing <strong>~1,600 faculty members</strong> across 12 STEM fields from top US research universities.</p>
+
+        <h2 style="margin-top: 30px;">Key Features</h2>
+        <p><strong>Smart Search Options:</strong> Describe your research interests in plain English with semantic search, or drop your CV and let AI extract your interests automatically.</p>
+
+        <p><strong>Hybrid Matching:</strong> Combines vector similarity, full-text search, and tag matching to find the best faculty matches based on published work and research focus.</p>
+
+        <p><strong>Rich Faculty Profiles:</strong> View h-index, citation counts, top papers, and career badges (rising star, established researcher, etc.) for each professor.</p>
+
+        <p><strong>Compare Mode:</strong> Select up to 3 faculty for side-by-side comparison to evaluate options.</p>
+
+        <p><strong>Explore Mode:</strong> Guided discovery for students unsure of exact interests, with AI-powered refinement suggestions.</p>
+
+        <p><strong>AI Explanations:</strong> Claude breaks down each match into Topic Alignment, Paper Relevance, and Research Fit so you understand why a professor matches your interests.</p>
+
+        <p><strong>Resources Hub:</strong> Includes guides on cold emails, coffee chat tips, PhD application timeline, and red flags to watch for.</p>
+
+        <h2 style="margin-top: 30px;">Tech Stack</h2>
+        <p>Frontend built with <strong>Next.js 16</strong>, React, Tailwind CSS, and shadcn/ui components. Backend uses <strong>FastAPI</strong> with PostgreSQL and pgvector for vector similarity search. <strong>OpenAI embeddings</strong> power the semantic matching, while <strong>Claude</strong> generates the personalized explanations.</p>
       </div>
 
       <!-- Action Buttons -->
