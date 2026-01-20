@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Research Advisor Finder - Ian Sequeira</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Research Advisor Finder - Ian Sequeira" />
+  <meta property="og:description" content="AI-powered tool using OpenAI embeddings and pgvector to match students with PhD advisors based on research interests and published work." />
+  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png" />
+  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/research-advisor-finder.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Research Advisor Finder - Ian Sequeira" />
+  <meta name="twitter:description" content="AI-powered tool using OpenAI embeddings and pgvector to match students with PhD advisors based on research interests and published work." />
+  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png" />
+
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Project page specific styles */
+    .project-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+
+    .project-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    .project-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      background: #000;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .project-description {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-description h2 {
+      color: #2c3e50;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .project-description p {
+      color: #2c3e50;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+      display: inline-block;
+      padding: 15px 35px;
+      background-color: white;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border: 2px solid white;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary-custom {
+      display: inline-block;
+      padding: 15px 35px;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      border: 2px solid white;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary-custom:hover {
+      background-color: white;
+      color: #2c3e50;
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary-custom i {
+      margin-right: 8px;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .project-description {
+        padding: 30px 25px;
+      }
+
+      .project-description h2 {
+        font-size: 1.5rem;
+      }
+
+      .project-description p {
+        font-size: 1rem;
+      }
+
+      .btn-primary-custom,
+      .btn-secondary-custom {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-page {
+        padding-top: 60px;
+      }
+
+      .project-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .project-description {
+        padding: 25px 20px;
+      }
+
+      .project-actions {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn-primary-custom,
+      .btn-secondary-custom {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="project-page">
+    <div class="project-container">
+      <!-- Header -->
+      <div class="project-header">
+        <h1>Research Advisor Finder</h1>
+      </div>
+
+      <!-- Video Player -->
+      <div class="video-container">
+        <video controls preload="metadata">
+          <source src="videos/research-advisor-finder-video.mov" type="video/quicktime">
+          <source src="videos/research-advisor-finder-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Project Description -->
+      <div class="project-description">
+        <h2>About This Project</h2>
+        <p>Finding a PhD advisor is tough, so I made this tool to help. It uses OpenAI embeddings to convert your research interests into vectors, then runs similarity search against a PostgreSQL database with pgvector to find professors whose published work aligns with what you want to study. The backend is FastAPI serving a Next.js frontend, and I integrated the Claude API to generate personalized explanations of why each professor might be a good match based on their actual papers.</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="project-actions">
+        <a href="index.html#portfolio" class="btn-primary-custom">
+          Back to Portfolio
+        </a>
+        <a href="https://github.com/ian-sequ7/research-advisor-finder" class="btn-secondary-custom" target="_blank">
+          <i class="fab fa-github"></i>View on GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
