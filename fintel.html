@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fintel - Financial Intelligence CLI | Ian Sequeira</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Fintel - Financial Intelligence CLI" />
+  <meta property="og:description" content="Personal stock research dashboard with multi-API data aggregation, market sentiment analysis, and conviction-rated stock picks." />
+  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png" />
+  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/fintel.html" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fintel - Financial Intelligence CLI" />
+  <meta name="twitter:description" content="Personal stock research dashboard with multi-API data aggregation, market sentiment analysis, and conviction-rated stock picks." />
+  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png" />
+
+  <!-- linking css file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ffffff;
+    }
+
+    .project-detail-container {
+      min-height: 100vh;
+      padding: 80px 0 60px 0;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .project-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .project-description {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .project-description p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+      margin: 0;
+    }
+
+    .project-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .btn-custom {
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-github {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .btn-github:hover {
+      background-color: #ffffff;
+      color: #0a0a0a;
+      text-decoration: none;
+    }
+
+    .btn-back {
+      background-color: #2c3e50;
+      color: #ffffff;
+      border: 2px solid #2c3e50;
+    }
+
+    .btn-back:hover {
+      background-color: transparent;
+      color: #ffffff;
+      border-color: #ffffff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .project-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .project-description {
+        padding: 30px 25px;
+      }
+
+      .project-description p {
+        font-size: 1rem;
+      }
+
+      .btn-custom {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .project-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-custom {
+        width: 80%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="project-detail-container">
+    <div class="container">
+      <div class="project-header">
+        <h1>Fintel - Financial Intelligence CLI</h1>
+      </div>
+
+      <div class="video-container">
+        <video controls>
+          <source src="videos/fintel-video.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="project-description">
+        <p>I built this as my personal stock research dashboard. It aggregates data from multiple financial APIs to calculate market sentiment, then runs a scoring algorithm to surface stock picks across short, medium, and long term timeframes with conviction ratings. The headwinds section tracks macro indicators like the Sahm Rule and dollar index, mapping their impact to specific sectors. Built in Python with async data pipelines so everything stays snappy even when pulling from a dozen sources at once.</p>
+      </div>
+
+      <div class="project-actions">
+        <a href="https://github.com/ian-sequ7/fintel" class="btn-custom btn-github" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+        <a href="index.html#portfolio" class="btn-custom btn-back">
+          <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
