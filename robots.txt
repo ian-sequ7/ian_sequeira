@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ian-sequ7.github.io/ian_sequeira/sitemap.xml
