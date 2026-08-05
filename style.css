@@ -294,6 +294,12 @@ img {
   color: #ffffff;
 }
 
+.cv-btn-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .hero-photo {
   width: 180px;
   height: 180px;
