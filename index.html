@@ -22,11 +22,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+  <link rel="preload" as="image" href="images/about.webp" type="image/webp">
   <link rel="preload" as="image" href="images/about.JPG">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <script defer src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -35,14 +36,17 @@
     "@type": "Person",
     "name": "Ian Sequeira",
     "url": "https://ian-sequ7.github.io/ian_sequeira/",
+    "email": "mailto:ian_sequeira@ucsb.edu",
+    "image": "https://ian-sequ7.github.io/ian_sequeira/images/about.JPG",
     "sameAs": [
       "https://www.linkedin.com/in/ian-sequ7/",
       "https://github.com/ian-sequ7"
     ],
     "jobTitle": "Undergraduate Researcher",
     "affiliation": {
-      "@type": "Organization",
-      "name": "University of California, Santa Barbara"
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Santa Barbara",
+      "department": "Department of Statistics & Applied Probability"
     }
   }
   </script>
@@ -90,7 +94,7 @@
         </div>
       </div>
       <div class="hero-photo-col">
-        <img src="images/about.JPG" alt="Ian Sequeira" class="hero-photo" width="180" height="180" fetchpriority="high">
+        <picture><source srcset="images/about.webp" type="image/webp"><img src="images/about.JPG" alt="Ian Sequeira" class="hero-photo" width="180" height="180" fetchpriority="high"></picture>
       </div>
     </div>
   </section>
@@ -104,6 +108,35 @@
         <p>My senior thesis with Prof. Annie Qu develops an anytime-valid guarantee for runtime monitors of multi-agent LLM pipelines — it attaches to whatever per-turn judge a system already uses. Before that I worked with Profs. Dan Gillen and Josh Grill at UC Irvine's Summer Institute for Biostatistics, building classifiers to catch Alzheimer's biomarkers before symptoms show. I also build data systems at Alida.</p>
         <p>Outside of research I DJ, lift, travel, surf, and mess with my car. Usually some subset of these in a given week.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="section fade-in" id="news">
+    <div class="section-narrow">
+      <h2 class="section-title">News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">Fall 2026</span>
+          <span class="news-text">Presenting CCC (anytime-valid runtime monitoring for multi-agent LLM pipelines) at the OEP research symposium.</span>
+        </li>
+        <li>
+          <span class="news-date">Summer 2026</span>
+          <span class="news-text">Awarded the SIOP Summer Research Scholarship at UCSB Statistics &amp; Applied Probability to work on CCC with Prof. Annie Qu.</span>
+        </li>
+        <li>
+          <span class="news-date">Nov 2025</span>
+          <span class="news-text">Co-authored poster at CTAD 2025 on preclinical Alzheimer's biomarker trial design.</span>
+        </li>
+        <li>
+          <span class="news-date">Sept 2025</span>
+          <span class="news-text">Started as Project Executive at ACM Industry, UCSB.</span>
+        </li>
+        <li>
+          <span class="news-date">Summer 2025</span>
+          <span class="news-text">Research fellow at UC Irvine's Summer Institute for Biostatistics &amp; Data Science (iSI-BUDS), NIH-funded.</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -132,7 +165,7 @@
       <h2 class="section-title">Projects &amp; Experience</h2>
 
       <div class="project-card">
-        <img src="images/portfolioImage1.jpg" alt="Alida Inc." class="project-thumb" loading="lazy">
+        <picture><source srcset="images/portfolioImage1.webp" type="image/webp"><img src="images/portfolioImage1.jpg" alt="Alida Inc." class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Alida Inc.</h3>
           <p class="project-role">Data Engineering Intern · Sept 2024 – Present</p>
@@ -145,7 +178,7 @@
       </div>
 
       <div class="project-card">
-        <img src="images/turingImage.png" alt="Turing" class="project-thumb" loading="lazy">
+        <picture><source srcset="images/turingImage.webp" type="image/webp"><img src="images/turingImage.png" alt="Turing" class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Turing</h3>
           <p class="project-role">Applied AI/GenAI SWE Intern · Feb – May 2026</p>
@@ -159,7 +192,7 @@
       </div>
 
       <div class="project-card">
-        <img src="images/isib_image.jpg" alt="Summer Institute for Biostatistics &amp; Data Science (iSI-BUDS)" class="project-thumb" loading="lazy">
+        <picture><source srcset="images/isib_image.webp" type="image/webp"><img src="images/isib_image.jpg" alt="Summer Institute for Biostatistics &amp; Data Science (iSI-BUDS)" class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Summer Institute for Biostatistics &amp; Data Science (iSI-BUDS)</h3>
           <p class="project-role">Research Fellow · Prof. Dan Gillen &amp; Prof. Josh Grill · June – Aug 2025</p>
@@ -172,7 +205,7 @@
       </div>
 
       <div class="project-card">
-        <img src="images/portfolioImage4.jpg" alt="Healthcare Financial Toxicity Prediction" class="project-thumb" loading="lazy">
+        <picture><source srcset="images/portfolioImage4.webp" type="image/webp"><img src="images/portfolioImage4.jpg" alt="Healthcare Financial Toxicity Prediction" class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Healthcare Financial Toxicity Prediction</h3>
           <p class="project-role">PSTAT 231 Final Project • UC Santa Barbara • March 2026</p>
@@ -186,7 +219,7 @@
       </div>
 
       <div class="project-card">
-        <img src="images/research_adv_image.png" alt="Research Advisor Finder" class="project-thumb" loading="lazy">
+        <picture><source srcset="images/research_adv_image.webp" type="image/webp"><img src="images/research_adv_image.png" alt="Research Advisor Finder" class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Research Advisor Finder</h3>
           <p class="project-role">Personal Project · Nov 2025 – Feb 2026</p>
@@ -200,7 +233,7 @@
       </div>
     
       <div class="project-card">
-        <img src="images/fintel_image.png" alt="Fintel" class="project-thumb" loading="lazy">
+        <picture><source srcset="images/fintel_image.webp" type="image/webp"><img src="images/fintel_image.png" alt="Fintel" class="project-thumb" loading="lazy"></picture>
         <div class="project-body">
           <h3 class="project-title">Fintel</h3>
           <p class="project-role">Personal Project · 2025</p>
@@ -256,23 +289,23 @@
       <h2 class="life-title">Life <a href="https://tidal.com/@ian_fm" target="_blank" rel="noopener noreferrer" class="life-music-link"><i class="fas fa-music"></i> tidal</a></h2>
       <div class="life-grid">
         <div class="life-item">
-          <img src="images/photo1.jpg" alt="Surfing in Costa Rica" class="life-photo" loading="lazy">
+          <picture><source srcset="images/photo1.webp" type="image/webp"><img src="images/photo1.jpg" alt="Surfing in Costa Rica" class="life-photo" loading="lazy"></picture>
           <div class="life-caption">Playa Tamarindo</div>
         </div>
         <div class="life-item">
-          <img src="images/photo7_friends.jpg" alt="Out with friends" class="life-photo" loading="lazy">
+          <picture><source srcset="images/photo7_friends.webp" type="image/webp"><img src="images/photo7_friends.jpg" alt="Out with friends" class="life-photo" loading="lazy"></picture>
           <div class="life-caption">Good Company</div>
         </div>
         <div class="life-item">
-          <img src="images/photo3.jpg" alt="Volleyball" class="life-photo" loading="lazy">
+          <picture><source srcset="images/photo3.webp" type="image/webp"><img src="images/photo3.jpg" alt="Volleyball" class="life-photo" loading="lazy"></picture>
           <div class="life-caption">Volleyball</div>
         </div>
         <div class="life-item">
-          <img src="images/photo4.jpg" alt="Family in Costa Rica" class="life-photo" loading="lazy">
+          <picture><source srcset="images/photo4.webp" type="image/webp"><img src="images/photo4.jpg" alt="Family in Costa Rica" class="life-photo" loading="lazy"></picture>
           <div class="life-caption">Family in Costa Rica</div>
         </div>
         <div class="life-item">
-          <img src="images/photo6_rome.jpg" alt="Colosseum in Rome" class="life-photo" loading="lazy">
+          <picture><source srcset="images/photo6_rome.webp" type="image/webp"><img src="images/photo6_rome.jpg" alt="Colosseum in Rome" class="life-photo" loading="lazy"></picture>
           <div class="life-caption">Roma</div>
         </div>
       </div>

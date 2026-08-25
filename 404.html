@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Ian Sequeira</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="This page doesn't exist. Back to the homepage.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#7A1F2E">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .not-found {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+    }
+    .not-found-code {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 400;
+      color: var(--color-accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin: 0 0 var(--space-2) 0;
+    }
+    .not-found-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--color-text);
+      margin: 0 0 var(--space-4) 0;
+    }
+    .not-found-text {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+      max-width: 40ch;
+      margin: 0 0 var(--space-6) 0;
+      line-height: 1.6;
+    }
+    .not-found-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="/ian_sequeira/" class="skip-to-content">Skip to content</a>
+
+  <nav class="site-nav">
+    <div class="nav-content">
+      <a href="/ian_sequeira/" class="nav-name">Ian Sequeira</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/ian_sequeira/#about">About</a>
+        <a href="/ian_sequeira/#research">Research</a>
+        <a href="/ian_sequeira/#projects">Projects</a>
+        <a href="/ian_sequeira/files/Ian_Sequeira_CV.pdf" target="_blank">CV</a>
+        <a href="/ian_sequeira/#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="not-found">
+      <p class="not-found-code">404</p>
+      <h1 class="not-found-title">This page doesn't exist.</h1>
+      <p class="not-found-text">The link may be stale, or something got renamed. Try the homepage.</p>
+      <div class="not-found-actions">
+        <a href="/ian_sequeira/" class="cv-btn">← Home</a>
+        <a href="/ian_sequeira/#projects" class="cv-btn">Projects</a>
+        <a href="/ian_sequeira/#contact" class="cv-btn">Contact</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

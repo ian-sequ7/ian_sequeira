@@ -13,8 +13,8 @@
   /* Text */
   --color-text: #1a1a1a;
   --color-text-secondary: #555555;
-  --color-text-muted: #888888;
-  --color-text-light: #aaaaaa;
+  --color-text-muted: #6b6b6b;   /* WCAG AA on white (4.6:1) */
+  --color-text-light: #767676;   /* WCAG AA on white (4.5:1) */
 
   /* Accent — burgundy */
   --color-accent: #7A1F2E;
@@ -40,6 +40,33 @@
   --width-content: 800px;
   --width-narrow: 680px;
   --nav-height: 56px;
+}
+
+/* === DARK MODE (auto — respects OS setting) === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0f0f10;
+    --color-bg-alt: #1a1a1c;
+    --color-border: #2d2d30;
+    --color-border-strong: #4a4a4d;
+    --color-text: #f0f0f0;
+    --color-text-secondary: #c8c8c8;
+    --color-text-muted: #a0a0a0;
+    --color-text-light: #888888;
+    --color-accent: #c9576a;         /* burgundy lightened for dark bg */
+    --color-accent-hover: #dc7787;
+  }
+
+  .project-thumb {
+    filter: grayscale(40%) contrast(0.9) brightness(0.85);
+  }
+
+  .project-card:hover .project-thumb {
+    filter: grayscale(0%) contrast(1) brightness(0.9);
+  }
+
+  .form-alert-success { background: #14351f; color: #86efac; }
+  .form-alert-error   { background: #3a1414; color: #fca5a5; }
 }
 
 /* === BASE === */
@@ -524,91 +551,52 @@ img {
 .contact-info {
   font-size: 1rem;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-8);
+  margin-bottom: 0;
 }
 
 .contact-info p {
   margin: 0 0 var(--space-1) 0;
 }
 
-.contact-form {
-  max-width: 480px;
-  margin: 0 auto;
-  text-align: left;
+/* === NEWS === */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.contact-form .form-group {
-  margin-bottom: var(--space-3);
+.news-list li {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: baseline;
 }
 
-.contact-form label {
-  display: block;
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-1);
+  color: var(--color-text-muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  font-family: var(--font-body);
+.news-text {
   font-size: 0.9375rem;
-  padding: 10px 14px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: border-color 0.15s ease;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
-.contact-form input:focus-visible,
-.contact-form textarea:focus-visible {
-  border-color: var(--color-accent);
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.contact-form .btn-submit {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 600;
-  background: var(--color-accent);
-  color: #ffffff;
-  border: none;
-  padding: 10px 28px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.15s ease;
-  width: 100%;
-}
-
-.contact-form .btn-submit:hover {
-  background: var(--color-accent-hover);
-}
-
-.form-alert {
-  margin-top: var(--space-4);
-  padding: var(--space-3) var(--space-4);
-  border-radius: 4px;
-  font-size: 0.875rem;
-  display: none;
-}
-
-.form-alert-success {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.form-alert-error {
-  background: #fee2e2;
-  color: #991b1b;
+@media (max-width: 640px) {
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+    padding: var(--space-4) 0;
+  }
 }
 
 /* === FOOTER === */
@@ -846,14 +834,6 @@ img {
   border-top: 1px solid var(--color-border);
 }
 
-/* === HONEYPOT (anti-spam) === */
-.honeypot {
-  position: absolute;
-  left: -9999px;
-  height: 0;
-  overflow: hidden;
-}
-
 /* === FOCUS STATES === */
 *:focus-visible {
   outline: 2px solid var(--color-accent);
@@ -899,6 +879,12 @@ img {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* If JS is disabled, keep content visible — never hide behind a class the
+   IntersectionObserver would have added. */
+@media (scripting: none) {
+  .fade-in { opacity: 1; transform: none; }
 }
 
 /* === REDUCED MOTION === */
