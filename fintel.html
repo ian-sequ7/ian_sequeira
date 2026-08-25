@@ -76,16 +76,16 @@
 
         <div class="subpage-prose">
 
-          <p>I built Fintel because I wanted my own equity research tool that ran from the terminal — something I could iterate on faster than another dashboard. It reads market data from a handful of APIs, scores tickers on a small factor model, and pulls in the macro signals I actually check on a day-to-day basis.</p>
+          <p>I built Fintel because I wanted my own equity research tool that ran from the terminal, something I could iterate on faster than another dashboard. It reads market data from a handful of APIs, scores tickers on a small factor model, and pulls in the macro signals I actually check on a day-to-day basis.</p>
 
           <h2>Factor scoring</h2>
-          <p>The scoring model is deliberately simple: momentum (25%), quality (25%), valuation (20%), growth (15%), analyst consensus (10%), and smart-money flows (5%). The point wasn't to invent a new factor — it was to see whether a legible, tunable stack could actually change what I looked at day-to-day. It does. Being able to change one weight and re-rank the universe in a few seconds is the whole game.</p>
+          <p>The scoring model is deliberately simple: momentum (25%), quality (25%), valuation (20%), growth (15%), analyst consensus (10%), and smart-money flows (5%). The point wasn't to invent a new factor. It was to see whether a legible, tunable stack could actually change what I looked at day-to-day. It does. Being able to change one weight and re-rank the universe in a few seconds is the whole game.</p>
 
           <h2>Smart-money tracking</h2>
           <p>Tracks 13F filings, insider Form 4 transactions, and Congressional trades. When insiders are buying or activist funds are taking positions, that gets weighted into the score. Mostly this is a filter for "worth reading more about," not a signal by itself.</p>
 
           <h2>Macro side</h2>
-          <p>Monitors 22 economic indicators across 8 categories — credit spreads, housing, recession probability (Sahm rule), financial-stress indices, inflation, labor, valuations, currency dynamics — and maps each to sector-level impacts. This part started as a way to sanity-check whether news stories matched the underlying data, and stayed because it turned out to be more informative than the news.</p>
+          <p>Monitors 22 economic indicators across 8 categories: credit spreads, housing, recession probability (Sahm rule), financial-stress indices, inflation, labor, valuations, currency dynamics. Each maps to sector-level impacts. This part started as a way to sanity-check whether news stories matched the underlying data, and stayed because it turned out to be more informative than the news.</p>
 
           <h2>Everything else</h2>
           <p>Daily briefings with the economic calendar and historical reaction patterns; portfolio analytics (paper trading, P&amp;L, Sharpe, tax-loss harvesting); a TradingView hookup for technicals. All of it lives behind a CLI I can pipe into other tools.</p>

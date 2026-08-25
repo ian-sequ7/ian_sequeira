@@ -76,12 +76,12 @@
 
         <div class="subpage-prose">
 
-          <p>This came out of my own PhD search. Skimming faculty pages was slow, and the existing tools were mostly ranked lists that didn't tell me <em>why</em> anyone was a match. I wanted something that read a CV or an interest paragraph and pointed at faculty whose actual published work overlapped — with an explanation I could read in thirty seconds.</p>
+          <p>This came out of my own PhD search. Skimming faculty pages was slow, and the existing tools were mostly ranked lists that didn't tell me <em>why</em> anyone was a match. I wanted something that read a CV or an interest paragraph and pointed at faculty whose actual published work overlapped, with an explanation I could read in thirty seconds.</p>
 
           <p>It indexes 15,000+ faculty across 12 STEM fields at US R1 research universities. Live at <a href="https://research-advisor-finder.vercel.app" target="_blank" rel="noopener noreferrer">research-advisor-finder.vercel.app</a>.</p>
 
           <h2>Matching</h2>
-          <p>The search is hybrid — vector similarity over paper embeddings, full-text over abstracts, and tag matching over declared areas. Each of these catches things the other two miss, so combining them recovers more real matches than any of them alone.</p>
+          <p>The search is hybrid: vector similarity over paper embeddings, full-text over abstracts, and tag matching over declared areas. Each of these catches things the other two miss, so combining them recovers more real matches than any of them alone.</p>
 
           <h2>Per-match reasoning</h2>
           <p>Claude generates a per-match breakdown across three axes: Topic Alignment (do their areas overlap yours?), Paper Relevance (do their specific papers relate?), and Research Fit (is there a plausible collaboration?). The ranking arrives with reasoning rather than a bare score, which was the whole reason I built it.</p>
