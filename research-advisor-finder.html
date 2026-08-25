@@ -1,254 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Research Advisor Finder - Ian Sequeira</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Advisor Finder · Ian Sequeira</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="A tool I built for my own PhD search: hybrid semantic search over 15,000+ faculty at US R1 universities, with per-match reasoning across topic, paper, and research fit.">
+  <link rel="canonical" href="https://ian-sequ7.github.io/ian_sequeira/research-advisor-finder.html">
 
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Research Advisor Finder - Ian Sequeira" />
-  <meta property="og:description" content="AI-powered tool using OpenAI embeddings and pgvector to match students with PhD advisors based on research interests and published work." />
-  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png" />
-  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/research-advisor-finder.html" />
-  <meta property="og:type" content="website" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Research Advisor Finder · Ian Sequeira">
+  <meta property="og:description" content="Hybrid semantic search over 15,000+ faculty at US R1 universities, with per-match reasoning across topic, paper, and research fit.">
+  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png">
+  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/research-advisor-finder.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ian Sequeira">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Research Advisor Finder · Ian Sequeira">
+  <meta name="twitter:description" content="Hybrid semantic search over 15,000+ faculty at US R1 universities, with per-match reasoning across topic, paper, and research fit.">
+  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png">
+  <meta name="theme-color" content="#7A1F2E">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Research Advisor Finder - Ian Sequeira" />
-  <meta name="twitter:description" content="AI-powered tool using OpenAI embeddings and pgvector to match students with PhD advisors based on research interests and published work." />
-  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/research_adv_image.png" />
+  <!-- Preconnect + fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- linking css file -->
+  <!-- Font Awesome (for nav hamburger on mobile — matches index.html) -->
+  <script defer src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css">
-  <!-- bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
-
-  <style>
-    /* Project page specific styles */
-    .project-page {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-      padding-top: 80px;
-      padding-bottom: 60px;
-    }
-
-    .project-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .project-header {
-      text-align: center;
-      margin-bottom: 50px;
-      color: white;
-    }
-
-    .project-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: white;
-    }
-
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      background: #000;
-    }
-
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .project-description {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
-      padding: 40px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-description h2 {
-      color: #2c3e50;
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .project-description p {
-      color: #2c3e50;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 0;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary-custom {
-      display: inline-block;
-      padding: 15px 35px;
-      background-color: white;
-      color: #2c3e50;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      border: 2px solid white;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-primary-custom:hover {
-      background-color: transparent;
-      color: white;
-      text-decoration: none;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-secondary-custom {
-      display: inline-block;
-      padding: 15px 35px;
-      background-color: transparent;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      border: 2px solid white;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-secondary-custom:hover {
-      background-color: white;
-      color: #2c3e50;
-      text-decoration: none;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-secondary-custom i {
-      margin-right: 8px;
-    }
-
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .project-header h1 {
-        font-size: 2.2rem;
-      }
-
-      .project-description {
-        padding: 30px 25px;
-      }
-
-      .project-description h2 {
-        font-size: 1.5rem;
-      }
-
-      .project-description p {
-        font-size: 1rem;
-      }
-
-      .btn-primary-custom,
-      .btn-secondary-custom {
-        padding: 12px 25px;
-        font-size: 0.95rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .project-page {
-        padding-top: 60px;
-      }
-
-      .project-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .project-description {
-        padding: 25px 20px;
-      }
-
-      .project-actions {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .btn-primary-custom,
-      .btn-secondary-custom {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="project-page">
-    <div class="project-container">
-      <!-- Header -->
-      <div class="project-header">
-        <h1>Research Advisor Finder</h1>
-      </div>
 
-      <!-- Video Player -->
-      <div class="video-container">
-        <video controls preload="metadata">
-          <source src="videos/research-advisor-finder-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+  <a href="#main" class="skip-to-content">Skip to content</a>
 
-      <!-- Project Description -->
-      <div class="project-description">
-        <h2>About This Project</h2>
-        <p>Finding a PhD advisor is tough, so I built this AI-powered tool to help applicants discover faculty whose research truly aligns with theirs. It's <strong>live and deployed</strong> with the frontend on Vercel and backend on Railway, currently indexing <strong>15,000+ faculty members</strong> across 12 STEM fields from top US research universities.</p>
-
-        <h2 style="margin-top: 30px;">Key Features</h2>
-        <p><strong>Smart Search Options:</strong> Describe your research interests in plain English with semantic search, or drop your CV and let AI extract your interests automatically.</p>
-
-        <p><strong>Hybrid Matching:</strong> Combines vector similarity, full-text search, and tag matching to find the best faculty matches based on published work and research focus.</p>
-
-        <p><strong>Rich Faculty Profiles:</strong> View h-index, citation counts, top papers, and career badges (rising star, established researcher, etc.) for each professor.</p>
-
-        <p><strong>Compare Mode:</strong> Select up to 3 faculty for side-by-side comparison to evaluate options.</p>
-
-        <p><strong>Explore Mode:</strong> Guided discovery for students unsure of exact interests, with AI-powered refinement suggestions.</p>
-
-        <p><strong>AI Explanations:</strong> Claude breaks down each match into Topic Alignment, Paper Relevance, and Research Fit so you understand why a professor matches your interests.</p>
-
-        <p><strong>Resources Hub:</strong> Includes guides on cold emails, coffee chat tips, PhD application timeline, and red flags to watch for.</p>
-
-        <h2 style="margin-top: 30px;">Tech Stack</h2>
-        <p>Frontend built with <strong>Next.js 15</strong>, React, Tailwind CSS, and shadcn/ui components. Backend uses <strong>FastAPI</strong> with PostgreSQL and pgvector for vector similarity search. <strong>OpenAI embeddings</strong> power the semantic matching, while <strong>Claude</strong> generates the personalized explanations.</p>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="project-actions">
-        <a href="index.html#projects" class="btn-primary-custom">
-          Back to Portfolio
-        </a>
-        <a href="https://github.com/ian-sequ7/research-advisor-finder" class="btn-secondary-custom" target="_blank">
-          <i class="fab fa-github"></i>View on GitHub
-        </a>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-content">
+      <a href="index.html" class="nav-name">Ian Sequeira</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="files/Ian_Sequeira_CV.pdf" target="_blank">CV</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="section-narrow">
+
+        <p class="subpage-back"><a href="index.html#projects">← Back to projects</a></p>
+        <h1 class="subpage-title">Research Advisor Finder</h1>
+        <p class="subpage-meta">Personal project · Nov 2025 – Feb 2026 · Next.js, FastAPI, pgvector</p>
+
+        <div class="video-container">
+          <video controls preload="metadata" poster="images/research_adv_image.png">
+            <source src="videos/research-advisor-finder-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="subpage-prose">
+
+          <p>This came out of my own PhD search. Skimming faculty pages was slow, and the existing tools were mostly ranked lists that didn't tell me <em>why</em> anyone was a match. I wanted something that read a CV or an interest paragraph and pointed at faculty whose actual published work overlapped — with an explanation I could read in thirty seconds.</p>
+
+          <p>It indexes 15,000+ faculty across 12 STEM fields at US R1 research universities. Live at <a href="https://research-advisor-finder.vercel.app" target="_blank" rel="noopener noreferrer">research-advisor-finder.vercel.app</a>.</p>
+
+          <h2>Matching</h2>
+          <p>The search is hybrid — vector similarity over paper embeddings, full-text over abstracts, and tag matching over declared areas. Each of these catches things the other two miss, so combining them recovers more real matches than any of them alone.</p>
+
+          <h2>Per-match reasoning</h2>
+          <p>Claude generates a per-match breakdown across three axes: Topic Alignment (do their areas overlap yours?), Paper Relevance (do their specific papers relate?), and Research Fit (is there a plausible collaboration?). The ranking arrives with reasoning rather than a bare score, which was the whole reason I built it.</p>
+
+          <h2>Modes</h2>
+          <p><strong>Search</strong> takes a plain-English description or a CV upload. <strong>Compare</strong> lets you evaluate up to three faculty side-by-side. <strong>Explore</strong> is a guided mode for students who don't yet know what to search for.</p>
+
+          <h2>Faculty profiles</h2>
+          <p>Each professor page shows h-index, citation counts, top papers, and career-stage badges. Not because those metrics decide anything, but because they're the fastest way to orient before reading the papers themselves.</p>
+
+          <h2>Stack</h2>
+          <p>Frontend on Vercel (Next.js 15, React, Tailwind, shadcn/ui). Backend on Railway (FastAPI, PostgreSQL, pgvector). OpenAI embeddings for the vectors; Claude for the explanations.</p>
+
+        </div>
+
+        <div class="subpage-actions">
+          <a href="https://research-advisor-finder.vercel.app" class="cv-btn" target="_blank" rel="noopener noreferrer">Try it live</a>
+          <a href="https://github.com/ian-sequ7/research-advisor-finder" class="cv-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="index.html#projects" class="cv-btn">← Back to projects</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-copyright">&copy; 2026 Ian Sequeira</p>
+    <div class="footer-nav">
+      <a href="index.html#about">About</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#research">Research</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#projects">Projects</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

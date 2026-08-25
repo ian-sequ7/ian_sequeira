@@ -732,6 +732,120 @@ img {
   }
 }
 
+/* === CONTACT LEDE === */
+.contact-lede {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 46ch;
+  margin: 0 auto var(--space-6);
+}
+
+.contact-email {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* === SUBPAGES (project detail pages) === */
+.subpage-back {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.subpage-back a {
+  color: var(--color-text-secondary);
+}
+
+.subpage-back a:hover {
+  color: var(--color-accent);
+}
+
+.subpage-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.subpage-meta {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--space-8) 0;
+}
+
+.video-container {
+  width: 100%;
+  margin: 0 0 var(--space-12) 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subpage-prose p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0 0 var(--space-4) 0;
+  max-width: 65ch;
+}
+
+.subpage-prose h2 {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: var(--space-8) 0 var(--space-3) 0;
+}
+
+.subpage-prose h2:first-child {
+  margin-top: 0;
+}
+
+.subpage-prose ul {
+  padding-left: var(--space-6);
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.subpage-prose li {
+  margin-bottom: var(--space-1);
+}
+
+.subpage-prose code {
+  font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--color-bg-alt);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+.subpage-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
 /* === HONEYPOT (anti-spam) === */
 .honeypot {
   position: absolute;

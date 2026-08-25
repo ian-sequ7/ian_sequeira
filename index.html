@@ -67,7 +67,6 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
-        <a href="files/Ian_Sequeira_Resume.pdf" target="_blank">Resume</a>
         <a href="files/Ian_Sequeira_CV.pdf" target="_blank">CV</a>
         <a href="#contact">Contact</a>
       </div>
@@ -79,7 +78,7 @@
     <div class="hero-grid">
       <div class="hero-text">
         <h1 class="hero-name">Ian Sequeira</h1>
-        <p class="hero-subtitle">Statistics & Data Science and Economics · University of California, Santa Barbara</p>
+        <p class="hero-subtitle">Statistics & Data Science and Economics · UC Santa Barbara · undergraduate research with Prof. Annie Qu</p>
         <p class="hero-interests"><strong>Research Interests:</strong> anytime-valid inference, agentic systems, biostatistics, and operations research.</p>
         <div class="hero-social">
           <a href="https://github.com/ian-sequ7" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
@@ -87,7 +86,6 @@
           <a href="mailto:ian_sequeira@ucsb.edu"><i class="fas fa-envelope"></i> Email</a>
         </div>
         <div class="cv-btn-group">
-          <a href="files/Ian_Sequeira_Resume.pdf" class="cv-btn" target="_blank">Download Resume</a>
           <a href="files/Ian_Sequeira_CV.pdf" class="cv-btn" target="_blank">Download CV</a>
         </div>
       </div>
@@ -103,7 +101,7 @@
       <h2 class="section-title">About</h2>
       <div class="about-text">
         <p>I'm a fourth-year Statistics & Data Science and Economics student at UC Santa Barbara. I care about practical theory: methods with real guarantees that also actually work when you ship them. That's how I ended up focused on AI reliability.</p>
-        <p>My senior thesis with Prof. Annie Qu is on provable failure detection for multi-agent LLM systems. Before that I worked with Prof. Dan Gillen at UC Irvine's Summer Institute for Biostatistics, building classifiers to catch Alzheimer's biomarkers before symptoms show. I also build data systems at Alida.</p>
+        <p>My senior thesis with Prof. Annie Qu develops an anytime-valid guarantee for runtime monitors of multi-agent LLM pipelines — it attaches to whatever per-turn judge a system already uses. Before that I worked with Profs. Dan Gillen and Josh Grill at UC Irvine's Summer Institute for Biostatistics, building classifiers to catch Alzheimer's biomarkers before symptoms show. I also build data systems at Alida.</p>
         <p>Outside of research I DJ, lift, travel, surf, and mess with my car. Usually some subset of these in a given week.</p>
       </div>
     </div>
@@ -116,7 +114,7 @@
 
       <div class="research-entry">
         <p class="research-title">Compositional Coordination Confidence for Multi-Agent LLM Systems</p>
-        <p class="research-meta">with Prof. Annie Qu · UCSB, 2026 – Present · <em>targeting ICLR 2027 submission</em> · <em>presenting at OEP research symposium Fall 2026</em></p>
+        <p class="research-meta">with Prof. Annie Qu · UCSB, 2026 – Present · <em>in preparation</em> · <em>presenting at OEP research symposium Fall 2026</em></p>
         <p class="research-desc">A method for halting multi-agent LLM pipelines mid-run with a formal guarantee. It attaches to whatever per-turn judge a system already uses, and controls how often it stops a pipeline that was actually working. Because the guarantee holds at any stopping time, operators can pick the tolerance after seeing the evidence rather than committing in advance.</p>
       </div>
 
@@ -285,32 +283,11 @@
   <section class="section fade-in" id="contact">
     <div class="contact-center">
       <h2 class="section-title">Contact</h2>
+      <p class="contact-lede">Email is the best way to reach me. I read everything within a day or two.</p>
       <div class="contact-info">
-        <p><a href="mailto:ian_sequeira@ucsb.edu">ian_sequeira@ucsb.edu</a></p>
-        <p>Department of Statistics & Applied Probability · UC Santa Barbara</p>
+        <p><a href="mailto:ian_sequeira@ucsb.edu" class="contact-email">ian_sequeira@ucsb.edu</a></p>
+        <p>Undergraduate researcher · Dept. of Statistics &amp; Applied Probability · UC Santa Barbara</p>
       </div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xdkenzye" method="POST">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" autocomplete="email" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" autocomplete="off" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="honeypot" aria-hidden="true"><input name="_gotcha" tabindex="-1" autocomplete="off"></div>
-        <button type="submit" class="btn-submit">Send Message</button>
-        <div id="success-message" class="form-alert form-alert-success">Thank you! Your message has been sent.</div>
-        <div id="error-message" class="form-alert form-alert-error">Something went wrong. Please try again.</div>
-      </form>
     </div>
   </section>
 

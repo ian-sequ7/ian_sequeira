@@ -1,205 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Fintel - Financial Intelligence CLI | Ian Sequeira</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fintel · Ian Sequeira</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Fintel is a terminal-first equity research tool: a small legible factor stack, a set of macro signals, and enough scaffolding to actually use it day-to-day.">
+  <link rel="canonical" href="https://ian-sequ7.github.io/ian_sequeira/fintel.html">
 
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Fintel - Financial Intelligence CLI" />
-  <meta property="og:description" content="Personal stock research dashboard with multi-API data aggregation, market sentiment analysis, and conviction-rated stock picks." />
-  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png" />
-  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/fintel.html" />
-  <meta property="og:type" content="website" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fintel · Ian Sequeira">
+  <meta property="og:description" content="A terminal equity research tool with a small factor stack, macro signals, and just enough scaffolding to use daily.">
+  <meta property="og:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png">
+  <meta property="og:url" content="https://ian-sequ7.github.io/ian_sequeira/fintel.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ian Sequeira">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fintel · Ian Sequeira">
+  <meta name="twitter:description" content="A terminal equity research tool with a small factor stack, macro signals, and just enough scaffolding to use daily.">
+  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png">
+  <meta name="theme-color" content="#7A1F2E">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fintel - Financial Intelligence CLI" />
-  <meta name="twitter:description" content="Personal stock research dashboard with multi-API data aggregation, market sentiment analysis, and conviction-rated stock picks." />
-  <meta name="twitter:image" content="https://ian-sequ7.github.io/ian_sequeira/images/fintel_image.png" />
+  <!-- Preconnect + fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- linking css file -->
+  <!-- Font Awesome (for nav hamburger on mobile — matches index.html) -->
+  <script defer src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css">
-  <!-- bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
-
-  <style>
-    body {
-      background-color: #0a0a0a;
-      color: #ffffff;
-    }
-
-    .project-detail-container {
-      min-height: 100vh;
-      padding: 80px 0 60px 0;
-    }
-
-    .project-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .project-header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    .video-container {
-      max-width: 900px;
-      margin: 0 auto 50px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    }
-
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .project-description {
-      max-width: 800px;
-      margin: 0 auto 50px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .project-description p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #e0e0e0;
-      margin: 0;
-    }
-
-    .project-actions {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .btn-custom {
-      padding: 14px 32px;
-      font-size: 1rem;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .btn-github {
-      background-color: transparent;
-      color: #ffffff;
-      border: 2px solid #ffffff;
-    }
-
-    .btn-github:hover {
-      background-color: #ffffff;
-      color: #0a0a0a;
-      text-decoration: none;
-    }
-
-    .btn-back {
-      background-color: #2c3e50;
-      color: #ffffff;
-      border: 2px solid #2c3e50;
-    }
-
-    .btn-back:hover {
-      background-color: transparent;
-      color: #ffffff;
-      border-color: #ffffff;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .project-header h1 {
-        font-size: 2.2rem;
-      }
-
-      .project-description {
-        padding: 30px 25px;
-      }
-
-      .project-description p {
-        font-size: 1rem;
-      }
-
-      .btn-custom {
-        padding: 12px 24px;
-        font-size: 0.95rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .project-header h1 {
-        font-size: 1.8rem;
-      }
-
-      .project-actions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-custom {
-        width: 80%;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="project-detail-container">
-    <div class="container">
-      <div class="project-header">
-        <h1>Fintel - Financial Intelligence CLI</h1>
-      </div>
 
-      <div class="video-container">
-        <video controls>
-          <source src="videos/fintel-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+  <a href="#main" class="skip-to-content">Skip to content</a>
 
-      <div class="project-description">
-        <p style="margin-bottom: 30px;">I built this as my personal financial intelligence dashboard—bringing institutional-grade stock analysis to the command line. It combines quantitative scoring, smart money tracking, and macro risk analysis to surface high-conviction investment ideas.</p>
-
-        <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Stock Scoring Engine</h3>
-        <p style="margin-bottom: 25px;">A 6-factor algorithm grounded in academic research: Momentum (25%), Quality (25%), Valuation (20%), Growth (15%), Analyst consensus (10%), and Smart Money flows (5%). Each stock gets scored and ranked to surface the most compelling opportunities.</p>
-
-        <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Smart Money Tracking</h3>
-        <p style="margin-bottom: 25px;">Tracks hedge fund 13F filings, insider Form 4 transactions, and Congressional trades. When insiders are buying or activist funds are taking positions, that signal gets factored into the model.</p>
-
-        <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Macro Risk Analysis</h3>
-        <p style="margin-bottom: 25px;">Monitors 22+ economic indicators across 8 categories: credit spreads, housing, recession probability (Sahm Rule), financial stress, inflation, labor market, valuations, and currency dynamics. Each indicator maps to specific sector impacts.</p>
-
-        <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Additional Features</h3>
-        <p style="margin-bottom: 25px;">Daily market briefings with economic calendar and historical reaction patterns. Portfolio analytics with paper trading, P&L tracking, Sharpe ratio, and tax-loss harvesting. TradingView integration for technical analysis.</p>
-
-        <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">Tech Stack</h3>
-        <p>Python 3.11+ with async httpx, SQLite for persistence. Frontend built with Astro 5, React 19, and TailwindCSS 4.</p>
-      </div>
-
-      <div class="project-actions">
-        <a href="https://github.com/ian-sequ7/fintel" class="btn-custom btn-github" target="_blank">
-          <i class="fab fa-github"></i> View on GitHub
-        </a>
-        <a href="index.html#projects" class="btn-custom btn-back">
-          <i class="fas fa-arrow-left"></i> Back to Portfolio
-        </a>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-content">
+      <a href="index.html" class="nav-name">Ian Sequeira</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="files/Ian_Sequeira_CV.pdf" target="_blank">CV</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="section-narrow">
+
+        <p class="subpage-back"><a href="index.html#projects">← Back to projects</a></p>
+        <h1 class="subpage-title">Fintel</h1>
+        <p class="subpage-meta">Personal project · 2025 – Present · Python, Astro, React</p>
+
+        <div class="video-container">
+          <video controls preload="metadata" poster="images/fintel_image.png">
+            <source src="videos/fintel-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="subpage-prose">
+
+          <p>I built Fintel because I wanted my own equity research tool that ran from the terminal — something I could iterate on faster than another dashboard. It reads market data from a handful of APIs, scores tickers on a small factor model, and pulls in the macro signals I actually check on a day-to-day basis.</p>
+
+          <h2>Factor scoring</h2>
+          <p>The scoring model is deliberately simple: momentum (25%), quality (25%), valuation (20%), growth (15%), analyst consensus (10%), and smart-money flows (5%). The point wasn't to invent a new factor — it was to see whether a legible, tunable stack could actually change what I looked at day-to-day. It does. Being able to change one weight and re-rank the universe in a few seconds is the whole game.</p>
+
+          <h2>Smart-money tracking</h2>
+          <p>Tracks 13F filings, insider Form 4 transactions, and Congressional trades. When insiders are buying or activist funds are taking positions, that gets weighted into the score. Mostly this is a filter for "worth reading more about," not a signal by itself.</p>
+
+          <h2>Macro side</h2>
+          <p>Monitors 22 economic indicators across 8 categories — credit spreads, housing, recession probability (Sahm rule), financial-stress indices, inflation, labor, valuations, currency dynamics — and maps each to sector-level impacts. This part started as a way to sanity-check whether news stories matched the underlying data, and stayed because it turned out to be more informative than the news.</p>
+
+          <h2>Everything else</h2>
+          <p>Daily briefings with the economic calendar and historical reaction patterns; portfolio analytics (paper trading, P&amp;L, Sharpe, tax-loss harvesting); a TradingView hookup for technicals. All of it lives behind a CLI I can pipe into other tools.</p>
+
+          <h2>Stack</h2>
+          <p>Python 3.11 with async httpx, SQLite for persistence. Frontend companion in Astro 5 + React 19 + Tailwind 4.</p>
+
+        </div>
+
+        <div class="subpage-actions">
+          <a href="https://github.com/ian-sequ7/fintel" class="cv-btn" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          <a href="index.html#projects" class="cv-btn">← Back to projects</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-copyright">&copy; 2026 Ian Sequeira</p>
+    <div class="footer-nav">
+      <a href="index.html#about">About</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#research">Research</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#projects">Projects</a>
+      <span class="footer-sep">·</span>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
